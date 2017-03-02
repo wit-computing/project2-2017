@@ -2,23 +2,27 @@
  <html>
    <head>
 
-     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.css" type="text/css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+     
 
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
 
-      <style>
-        
+     
+
+     <style>
+       
 
 body 
 {
@@ -36,23 +40,13 @@ figcaption
   align-items: center;
 }
 
-.credits
-{
-  min-height:20px;
-}
 
 
-    </style>
+     </style>
 
-  </head>
+   </head>
 
   <body>
-
-    
-
-
-
-  <div class="ui container">
     
 
 <style>
@@ -74,17 +68,36 @@ h1
 {
   font-style:italic;
   font-size:130%;
-  border-bottom: thin solid black;
+  border-bottom:thin solid black;
 }
+
 h2
 {
   font-size:110%;
   border-bottom: thin solid black;
 }
+
 h3
 {
   font-size:100%;
   border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
 }
 
 
@@ -93,39 +106,85 @@ h3
 
 <div class="ui fixed top pointing inverted menu labmenu">
   <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
     <a href="../index.html">
-      <i class="sitemap icon"></i>
-      Version Control Systems
+      Version Control Systems
     </a>
   </header>
   <div class="right tab-menu menu">
     
-      <a class="item" data-tab="markdown-lab-01">
-        markdown-lab-01
-      </a>
+    <a class="item" data-tab="markdown-lab-01">
+      markdown-lab-01
+    </a>
     
-      <a class="item" data-tab="01">
-        01
-      </a>
+    <a class="item" data-tab="01">
+      01
+    </a>
     
-      <a class="item" data-tab=".">
-        .
-      </a>
-    
-    </div>
+    <a class="item" href="../../index.html">
+      <i class="home icon"></i>
+    </a>
+  </div>
 </div>
 
-<br><br>
-
-  
-  <div  class="ui tab segment lab" data-tab="markdown-lab-01">
-    <h1>Objectives</h1>
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    
+      
+        <a class="item" href="../../topic02/book-git-lab/index.html">
+          git-lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02/book-github-pages-lab/index.html">
+          github-pages-lab-01
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic02/book-markdown-lab/index.html">
+          markdown-lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic03/book-arduino-workshop/index.html">
+          arduino-workshop-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic04/book-1-assignment-lab/index.html">
+          Assignment
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic04/book-2-wyliodrin-lab/index.html">
+          wyliodrin-lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic04/book-3-wyliodrin-lab-2/index.html">
+          wyliodrin-lab-02
+        </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="markdown-lab-01">
+        <h1>Objectives</h1>
 <p>The objective of this lab is to learn  Markdown, an easy-to-read, easy-to-write plain text format. </p>
 
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="01">
-    <h2>Markdown</h2>
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <h2>Markdown</h2>
 <p>Markdown allows you to write in a simplistic syntax that can be converted to HTML and several other formats. Markdown is often used to author readme files, for writing messages in online discussion forums, and to create &quot;rich text&quot; using a plain text editor.</p>
 <h2>Online Tutorial</h2>
 <p>To learn Markdown syntax, go <a href="http://markdowntutorial.com/">here</a>  and complete the interacive tutorial. </p>
@@ -137,94 +196,81 @@ h3
 <p>GitHub combines a syntax for formatting text called GitHub Flavoured Markdown with a few unique writing features. 
 In one of the first steps of the GIT-IT tutorial you created a README.md. Update this file using suitable markdown syntax with the following <a href="./pages/example.html">example</a>.</p>
 
+      </div>
+     
+    </div>
   </div>
- 
-  <div  class="ui tab segment lab" data-tab=".">
-    <h2>Project Synopsis</h2>
-<p>A short introduction and/ or overview that explains <strong>what</strong> the project is. </p>
-<h2>Code Example</h2>
-<p>Show what the library does as concisely as possible, developers should be able to figure out <strong>how</strong> your project solves their problem by looking at the code example.</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-
-&lt;p&gt;Click &quot;Try it&quot; to call a function with arguments&lt;/p&gt;
-
-&lt;button onclick=&quot;myFunction(&#39;Harry Potter&#39;,&#39;Wizard&#39;)&quot;&gt;Try it&lt;/button&gt;
-&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
-&lt;script&gt;
-function myFunction(name,job) {
-    document.getElementById(&quot;demo&quot;).innerHTML =
-    &quot;Welcome &quot; + name + &quot;, the &quot; + job + &quot;.&quot;;
-}
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-<p>The code is short and concise.</p>
-<h2>Motivation</h2>
-<p>A short description of the motivation behind the creation and maintenance of the project. This should explain <strong>why</strong> the project exists.</p>
-<h2>Installation</h2>
-<p>Provide code examples and explanations of how to get the project.</p>
-<pre><code>git clone http://git.com/fxwalsh/myproj.git</code></pre>
-<h2>Tests</h2>
-<p>Describe and show how to run the tests with code examples.</p>
-<h2>Contributors</h2>
-<p>Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.</p>
-<h2>License</h2>
-<p>A short snippet describing the license (MIT, Apache, etc.)</p>
-
-  </div>
- 
-
-
-<script>
-$('.ui.menu .item')
-  .tab({
-    history: true,
-    historyType: 'hash'
-  })
-;
-</script>
-
-   </div>
-
-   
-  <br><br>
-  <div class="ui bottom fixed borderless menu">
-    <div class="ui small item">
-    <p id="footertext">
-    Prepared by  Frank Walsh (fxwalsh@wit.ie). Except where otherwise noted, this content is licensed under a
-     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-     </a>
-     </p>
+</div>
+  <div class="ui bottom fixed borderless right menu">
+    <div class="ui right tiny menu">
+      <div class="ui mini message segment">
+        Frank Walsh (fxwalsh@wit.ie).
+        <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+            target="_blank">Creative Commons License
+        </a>
+      </div>
     </div>
   </div>
 
+<script>
+  $(document).on('keydown', function (e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+</script>
+
+    <footer>
+
+    </footer>
     <script>
-      
-$(document).ready(function()
-{
-  $("img").addClass ("ui image");
+      $(document).ready(function () {
+  $('img').addClass('ui image');
   $('.ui.embed').embed();
 
-  var images = $(".lab img");
-  jQuery.each(images, function(i)  {
-    if((images[i].alt).length > 0)
-    {
-      var div_img = $(document.createElement("div")).addClass("ui segment");
-      $(images[i]).wrap(div_img);
-      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
-      div_label.append(images[i].alt);
-      $(div_label).insertBefore(images[i]);
+  const $images = $('.lab img');
+  jQuery.each($images, function (i) {
+    if (($images[i].alt).length > 0) {
+      const divImg = $(document.createElement('div')).addClass('ui basic segment');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('ui blue ribbon label');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
     }
   });
 
+  $('.ui.embed').embed();
 
-})
+  $('.ui.menu .item')
+      .tab({
+        history: true,
+        historyType: 'hash',
+      });
 
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+      .sidebar({ context: $('.pushable') })
+      .sidebar('setting', 'transition', 'slide out')
+      .sidebar('attach events', '#toc');
+});
 
     </script>
-
   </body>
+
  </html>

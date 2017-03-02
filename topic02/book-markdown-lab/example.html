@@ -1,0 +1,182 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+     
+
+     <style>
+       
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+
+
+     </style>
+
+   </head>
+
+  <body>
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom:thin solid black;
+}
+
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+</style>
+
+<section class="ui container">
+  <h2>Project Synopsis</h2>
+<p>A short introduction and/ or overview that explains <strong>what</strong> the project is. </p>
+<h2>Code Example</h2>
+<p>Show what the library does as concisely as possible, developers should be able to figure out <strong>how</strong> your project solves their problem by looking at the code example.</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;Click &quot;Try it&quot; to call a function with arguments&lt;/p&gt;
+
+&lt;button onclick=&quot;myFunction(&#39;Harry Potter&#39;,&#39;Wizard&#39;)&quot;&gt;Try it&lt;/button&gt;
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+function myFunction(name,job) {
+    document.getElementById(&quot;demo&quot;).innerHTML =
+    &quot;Welcome &quot; + name + &quot;, the &quot; + job + &quot;.&quot;;
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>The code is short and concise.</p>
+<h2>Motivation</h2>
+<p>A short description of the motivation behind the creation and maintenance of the project. This should explain <strong>why</strong> the project exists.</p>
+<h2>Installation</h2>
+<p>Provide code examples and explanations of how to get the project.</p>
+<pre><code>git clone http://git.com/fxwalsh/myproj.git</code></pre>
+<h2>Tests</h2>
+<p>Describe and show how to run the tests with code examples.</p>
+<h2>Contributors</h2>
+<p>Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.</p>
+<h2>License</h2>
+<p>A short snippet describing the license (MIT, Apache, etc.)</p>
+
+</section>
+
+
+    <footer>
+
+    </footer>
+    <script>
+      $(document).ready(function () {
+  $('img').addClass('ui image');
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function (i) {
+    if (($images[i].alt).length > 0) {
+      const divImg = $(document.createElement('div')).addClass('ui basic segment');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('ui blue ribbon label');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.embed').embed();
+
+  $('.ui.menu .item')
+      .tab({
+        history: true,
+        historyType: 'hash',
+      });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+      .sidebar({ context: $('.pushable') })
+      .sidebar('setting', 'transition', 'slide out')
+      .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+
+ </html>
