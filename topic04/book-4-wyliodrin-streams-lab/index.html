@@ -108,13 +108,13 @@ body
   <header class="header item">
     <i id="toc" class="sitemap icon"></i>
     <a href="../index.html">
-      Introduction to Arduino
+      Getting Started with Wyliodrin
     </a>
   </header>
   <div class="right tab-menu menu">
     
-    <a class="item" data-tab="arduino-workshop-01">
-      arduino-workshop-01
+    <a class="item" data-tab="wyliodrin-lab-02">
+      wyliodrin-lab-02
     </a>
     
     <a class="item" data-tab="01">
@@ -149,7 +149,7 @@ body
       
     
       
-        <a class="active item" href="../../topic03/book-arduino-workshop/index.html">
+        <a class="item" href="../../topic03/book-arduino-workshop/index.html">
           arduino-workshop-01
         </a>
       
@@ -167,13 +167,13 @@ body
       
     
       
-        <a class="item" href="../../topic04/book-3-wyliodrin-lab-2/index.html">
+        <a class="active item" href="../../topic04/book-3-wyliodrin-lab-2/index.html">
           wyliodrin-lab-02
         </a>
       
     
       
-        <a class="item" href="../../topic04/book-4-wyliodrin-streams-lab/index.html">
+        <a class="active item" href="../../topic04/book-4-wyliodrin-streams-lab/index.html">
           wyliodrin-lab-02
         </a>
       
@@ -183,25 +183,94 @@ body
     <div class="ui basic segment">
       <br>
       
-      <div  class="ui tab segment lab" data-tab="arduino-workshop-01">
-        <h1>Objectives</h1>
-<p>The objective of this workshop is to introduce the basics of microcontroller programming.
-This was developed as part of joint SEMS/WIT workshop, summer 2016.</p>
+      <div  class="ui tab segment lab" data-tab="wyliodrin-lab-02">
+        <h1>Programming with Sketch and Streams</h1>
+<p>This tutorial will show you how to control the colour of an RGB LED using Sketch and a programming language called Streams.</p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="01">
-        <h2>Arduino</h2>
-<p>Arduino is an open-source prototyping platform based on easy-to-use hardware and software. In this lab, you will perform a few basic experments using the Arduino. You will learn how to:</p>
+        <h2>Equipment</h2>
 <ul>
-<li>Connect an Arduino to your laptop</li>
-<li>Create an electronic circuit using standard components</li>
-<li>Write code that runs on the arduino and interacts with electronic components</li>
+<li>Intel Galileo Gen 2 connected to Wyliodrin</li>
+<li>An RGB led (from the Arduino workshop)</li>
+<li>Ethernet cable</li>
+<li>Laptop</li>
 </ul>
-<h2>Arduino IDE</h2>
-<p>You will need to go <a href="http://www.arduino.org/downloads">here</a>  and download the correct Arduino IDE for your particular OS.</p>
-<h2>SEMS/WIT workshop</h2>
-<p>Once you have the IDE installed, go <a href="http://witcomputingcamp.github.io/IoT/topic01/index.html">here</a> and try the experiments. You can use the Arduino kits provided in the lab to do this. </p>
+<h2>Goal</h2>
+<ul>
+<li>Light up an RGB LED in different colors. </li>
+<li>Control the intensity and colour using Pulse Width Modulation (PWM).</li>
+</ul>
+<h2>The Circuit</h2>
+<p>Connect the RGB LED to the Galileo as shown in the following diagram:
+<img src="img/rgb_led_bb.png" alt="RGB LED" title="RGB LED Circuit"></p>
+<p>The RGB LED combines of  three LEDs: a red one, a green one and a blue one. Each of these LEDs is controlled by a PWM pin (indicated by a &quot;~&quot; on the board), so that it&#39;s brightness cna be controlled. As these are promary colours, by controling the &quot;brightness&quot; of each LED, the overall colour can be set.
+<img src="img/led.jpg" alt="Common Anode RGB LED" title="Common Anode RGB LED"></p>
+<h2>Make it Work (Sketch)</h2>
+<p>The following sketch will cycle through Red, Green, and Blue:</p>
+<pre><code>#include &lt;Arduino.h&gt;
+int redPin = 3;
+int greenPin = 5;
+int bluePin = 6;
+
+void setColor(int red, int green, int blue)
+{
+  analogWrite(redPin,255-red);
+  analogWrite(greenPin,255-green);
+  analogWrite(bluePin, 255-blue);  
+}
+
+void setup()
+{
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);  
+}
+
+void loop()
+{
+  setColor(255, 0, 0);  // red
+  delay(1000);
+  setColor(0, 255, 0);  // green
+  delay(1000);
+  setColor(0, 0, 255);  // blue
+  delay(1000);
+  setColor(255, 255, 0);  // yellow
+  delay(1000);  
+  setColor(80, 0, 80);  // purple
+  delay(1000);
+  setColor(0, 255, 255);  // aqua
+  delay(1000);
+}</code></pre>
+<p>Push the code to your device. CHALLENGE: Change the code to include your own colours.</p>
+<h3>Make it Work (Streams)</h3>
+<p>In this section we&#39;ll use a programming approach callled <em>streams</em> to control the RGB LED.  Wyliodrin provides the ability to write Streams programs. </p>
+<ul>
+<li>Create a new app in Wyliodrin called <em>RGB Streams</em>
+<img src="img/create_app.png" alt="Create App" title="Create App"></li>
+</ul>
+<ul>
+<li><p>Create the following streams program by selecting and configuring the correct nodes:
+<img src="img/rgb_streams.png" alt="Stream program" title="Stream program"></p>
+</li>
+<li><p>Now create a <em>Dashboard</em> to supply the signals (i.e. red, green blue)  for the program.
+<img src="img/dashboard.png" alt="RGB Dashboard" title="RGB Dashboard"></p>
+</li>
+<li><p>If all is well, you should now be able to delpoy the application to the Galileo and control it using the dashboard.</p>
+</li>
+</ul>
+<h3>Further Challenges:</h3>
+<ul>
+<li>Make a Streams application and use it to create a project that will light up a LED for 3 seconds at one press of a button.</li>
+<li>Do the same, using a switch from the dashboard instead of the button.</li>
+<li>Connect a button that you will have to press in order to turn on an LED and press again to turn the LED off.</li>
+<li>The same, only that if you have pressed the button once, for the next two seconds, pressing again the button will have no effect. In a nutshell, once you press the button, it will become inactive for the next two seconds.</li>
+<li>The same, but using the switch from the dashboard instead of the button.</li>
+</ul>
+<h3>References</h3>
+<p><a href="http://ocw.cs.pub.ro/courses/iot/labs/04">Programming with Streams lab, IoT Summer School 2015, Innovations lab</a> 
+<a href="https://learn.adafruit.com/adafruit-arduino-lesson-3-rgb-leds/arduino-sketch">Adafruit Arduino Lessons</a>  </p>
 
       </div>
      
