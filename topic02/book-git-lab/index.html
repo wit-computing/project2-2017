@@ -104,7 +104,7 @@ body
 
 </style>
 
-<div class="ui fixed top pointing inverted menu labmenu">
+<div class="ui fixed top pointing inverted stackable menu labmenu">
   <header class="header item">
     <i id="toc" class="sitemap icon"></i>
     <a href="../index.html">
@@ -125,17 +125,14 @@ body
       02
     </a>
     
-    <a class="item" data-tab="03">
-      03
-    </a>
-    
-    <a class="item" href="../../index.html">
-      <i class="home icon"></i>
-    </a>
+    <div class="item">
+      
+    </div>
   </div>
 </div>
 
-<div class="ui segment pushable">
+<div class="ui segment pushable" >
+
   <div class="ui inverted labeled icon left inline vertical sidebar menu">
     
       
@@ -188,7 +185,7 @@ body
     
   </div>
   <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
+    <div class="ui basic segment" id="labchat">
       <br>
       
       <div  class="ui tab segment lab" data-tab="git-lab-01">
@@ -212,39 +209,28 @@ body
       </div>
      
       <div  class="ui tab segment lab" data-tab="02">
-        <h1>Get Node</h1>
-<p>Follow the instructions <a href="https://nodejs.org/en/download/">here</a>  and download the current <strong>mature and dependable</strong> version of node for your machine.
-<img src="./img/02.png" alt="">
-Install Node on your machine.
-Open a command line/terminal window on your machine and enter <code>node -v</code>. It should respond as follows:</p>
-<pre><code>&gt; node -v
-v4.2.4</code></pre>
-<p><strong>Don&#39;t worry if you see a different version number. Node is constantly being improved and it should not affect your progress in this lab.</strong></p>
-
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="03">
         <h1>Get Git-It!</h1>
-<p> <a href="http://nodeschool.io/">NodeSchool</a> provides fantastic open source lesson modules for web technologies. One of these modules is <strong>Git-it</strong>,  a module to learn Git and GitHub basics.</p>
-<h2>UPDATE</h2>
-<p> git-it has been ported to a Desktop App.
- Pleease go <a href="https://github.com/jlord/git-it">here</a> and follow the instructions for your OS.</p>
+<p> <strong>git-it</strong> is a Desktop App.
+ Please go <a href="https://github.com/jlord/git-it">here</a> and follow the instructions for your OS.</p>
+<p><strong>NOTE:</strong> You only need to complete the tutorial up to the <em>Remote Control</em> step.</p>
 
       </div>
      
     </div>
+
   </div>
+
 </div>
-  <div class="ui bottom fixed borderless right menu">
+<!--  <div class="ui bottom fixed borderless right menu">
     <div class="ui right tiny menu">
       <div class="ui mini message segment">
-        Frank Walsh (fxwalsh@wit.ie).
+        Frank Walsh (fxwalsh@wit.ie).
         <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
             target="_blank">Creative Commons License
         </a>
       </div>
     </div>
-  </div>
+  </div>-->
 
 <script>
   $(document).on('keydown', function (e) {
@@ -268,6 +254,8 @@ v4.2.4</code></pre>
 });
 
 </script>
+
+
 
     <footer>
 

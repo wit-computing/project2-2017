@@ -104,7 +104,7 @@ body
 
 </style>
 
-<div class="ui fixed top pointing inverted menu labmenu">
+<div class="ui fixed top pointing inverted stackable menu labmenu">
   <header class="header item">
     <i id="toc" class="sitemap icon"></i>
     <a href="../index.html">
@@ -121,13 +121,14 @@ body
       01
     </a>
     
-    <a class="item" href="../../index.html">
-      <i class="home icon"></i>
-    </a>
+    <div class="item">
+      
+    </div>
   </div>
 </div>
 
-<div class="ui segment pushable">
+<div class="ui segment pushable" >
+
   <div class="ui inverted labeled icon left inline vertical sidebar menu">
     
       
@@ -180,7 +181,7 @@ body
     
   </div>
   <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
+    <div class="ui basic segment" id="labchat">
       <br>
       
       <div  class="ui tab segment lab" data-tab="arduino-workshop-01">
@@ -206,18 +207,20 @@ This was developed as part of joint SEMS/WIT workshop, summer 2016.</p>
       </div>
      
     </div>
+
   </div>
+
 </div>
-  <div class="ui bottom fixed borderless right menu">
+<!--  <div class="ui bottom fixed borderless right menu">
     <div class="ui right tiny menu">
       <div class="ui mini message segment">
-        Frank Walsh (fxwalsh@wit.ie).
+        Frank Walsh (fxwalsh@wit.ie).
         <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
             target="_blank">Creative Commons License
         </a>
       </div>
     </div>
-  </div>
+  </div>-->
 
 <script>
   $(document).on('keydown', function (e) {
@@ -241,6 +244,8 @@ This was developed as part of joint SEMS/WIT workshop, summer 2016.</p>
 });
 
 </script>
+
+
 
     <footer>
 
